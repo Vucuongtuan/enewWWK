@@ -20,7 +20,7 @@
     import FormChange from '../components/FormChange.vue';
 import { useDataStore } from '@/stores/DataStore';
 import { storeToRefs } from 'pinia';
-import Preview from '../components/Preview.vue';
+import Preview from '../components/preview.vue';
 import {handleFileUpload} from '@/utils/file'
 import { templateFunc } from '@/utils/template';
 
