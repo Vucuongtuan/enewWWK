@@ -19,7 +19,6 @@ const { view, data, nameFol, file } = storeToRefs(dataStore);
 const temp =   templateFunc(nameFol.value,data)
 const template = ref('')
 watch((view,data), ()=>{
- 
   template.value = temp
 })
 

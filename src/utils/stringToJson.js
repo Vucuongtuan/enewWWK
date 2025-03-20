@@ -20,7 +20,8 @@ const categories = [
     "Hospitality Business News",
     "W Coffee Talk",
     "Inspiration Journey",
-    "Tips & Advice"
+    "Tips & Advice",
+    "The Art Corner"
   ]
   
 

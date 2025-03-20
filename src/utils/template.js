@@ -2,7 +2,7 @@
 
 
 export const templateFunc = (nameFol,data) =>{
-    console.log(JSON.stringify(data.value));
+    console.log(data.value);
     
 
     const templateHTML = `

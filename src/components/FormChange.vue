@@ -1,6 +1,6 @@
 <script setup>
 
-import { reactive, ref } from 'vue';
+import { computed, reactive, ref } from 'vue';
 import { stringToJson } from '../utils/stringToJson';
 import { useDataStore } from '@/stores/DataStore';
 import { storeToRefs } from 'pinia';
@@ -11,11 +11,21 @@ const dataStore = useDataStore();
 const { view, data, nameFol, file } = storeToRefs(dataStore);
 
 const text = reactive({
-  nameFol: '',
+  nameFol: new Date().toLocaleDateString('en-GB', {
+    year: '2-digit',
+    month: '2-digit',
+    day: '2-digit'
+  }).split('/').reverse().join('') + '_Enews_weekly_',
   input: ''
 });
+
+const urlValue = computed(() => `https://www.wowweekend.vn/email/2025/${text.nameFol}/vi/`);
+
+
 const changeEnew = () => {
   const result = stringToJson(text.input);
+  console.log(result);
+  
   dataStore.addData(result);
 }
 
@@ -47,9 +57,10 @@ const changeFileUpload = (e) =>{
             id="nameFol"
             className="border border-gray-300 rounded-md w-full sm:w-[300px] px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition"
             placeholder="Enter folder name"
+            defaultValue="250327_Enews_weekly_0203"
             v-model="text.nameFol"
           />
-          <span className="text-sm text-gray-600 mt-1">{{nameFol}}</span>
+          <a :href="urlValue" >{{urlValue}}</a>
         </div>
       </div>
 
