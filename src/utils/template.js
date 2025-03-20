@@ -236,7 +236,7 @@ export const templateFunc = (nameFol,data) =>{
                                                 <table style="border-collapse: collapse; border-spacing: 0; padding: 0; text-align: left; vertical-align: top; width: 100%">
                                                   <tr style="padding: 0; text-align: left; vertical-align: top">
                                                     <th style="color: #0a0a0a; font-family: 'Bitter', Helvetica, Arial, sans-serif; font-size: 16px; font-weight: normal; line-height: 1.3; margin: 0; padding: 0; text-align: left">
-                                                    ${data.value.map((item) => (
+                                                    ${data.value.map((item,index) => (
                                                       ` <table class="spacer sp" style="border-collapse: collapse; border-spacing: 0; display: none; padding: 0; text-align: left; vertical-align: top; width: 100%"><tbody><tr style="padding: 0; text-align: left; vertical-align: top"><td height="25px" style="-moz-hyphens: auto; -webkit-hyphens: auto; Margin: 0; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Bitter', Helvetica, Arial, sans-serif; font-size: 5px; font-weight: normal; hyphens: auto; line-height: 25px; margin: 0; mso-line-height-rule: exactly; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word">&#xA0;</td></tr></tbody></table>
                                                       <table class="spacer pc" style="border-collapse: collapse; border-spacing: 0; padding: 0; text-align: left; vertical-align: top; width: 100%"><tbody><tr style="padding: 0; text-align: left; vertical-align: top"><td height="25px" style="-moz-hyphens: auto; -webkit-hyphens: auto; border-collapse: collapse !important; color: #0a0a0a; font-family: 'Bitter', Helvetica, Arial, sans-serif; font-size: 10px; font-weight: normal; hyphens: auto; line-height: 25px; margin: 0; mso-line-height-rule: exactly; padding: 0; text-align: left; vertical-align: top; word-wrap: break-word">&#xA0;</td></tr></tbody></table>
                                                       <table align="center" border="0" cellpadding="0" cellspacing="0" class="box-margin">
@@ -245,7 +245,7 @@ export const templateFunc = (nameFol,data) =>{
                                                             <td style="text-align: center;" valign="top" class="img-fares">
                                                               <center data-parsed="" style="width: 100%; text-align: center; margin: auto;">
                                                                 <a href="${item.url}" class="blog-link-1" target="_blank" style="line-height: 22px; margin: 0; padding: 0; text-align: center; display: inline-block; text-decoration: none;">
-                                                                  <img border="0" src="https://www.wowweekend.vn/email/2025/${nameFol}/assets/img/banner1_2x.jpg" height="292" width="520" style="display: block;">
+                                                                  <img border="0" src="https://www.wowweekend.vn/email/2025/${nameFol}/assets/img/banner${index + 1}_2x.jpg" height="292" width="520" style="display: block;">
                                                                 </a>
                                                               </center>
                                                             </td>
