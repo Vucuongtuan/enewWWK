@@ -1,6 +1,9 @@
 
 
 
+
+
+
 const categories = [
     "Properties Opportunity",
     "Watches",
@@ -21,8 +24,10 @@ const categories = [
     "W Coffee Talk",
     "Inspiration Journey",
     "Tips & Advice",
-    "The Art Corner"
+    "The Art Corner",
+    "Explore"
   ]
+  
   
 
 
