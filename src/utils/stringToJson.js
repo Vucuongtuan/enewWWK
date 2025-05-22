@@ -25,7 +25,8 @@ const categories = [
     "Inspiration Journey",
     "Tips & Advice",
     "The Art Corner",
-    "Explore"
+    "Explore",
+    "Enjoy"
   ]
   
   
