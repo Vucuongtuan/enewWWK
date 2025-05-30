@@ -22,8 +22,8 @@ const text = reactive({
 const urlValue = computed(() => `https://www.wowweekend.vn/email/2025/${text.nameFol}/vi/`);
 
 
-const changeEnew = () => {
-  const result = stringToJson(text.input);
+const changeEnew = async() => {
+  const result =await stringToJson(text.input);
   console.log(result);
   
   dataStore.addData(result);
