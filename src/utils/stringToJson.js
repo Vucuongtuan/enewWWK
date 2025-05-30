@@ -39,12 +39,12 @@ export const stringToJson = async(textString) =>{
 
    const lines = textString.trim().split('\n').filter(line => line.trim() !== '');
    const jsonArray = [];
-   let currentBlock: DataBlockItem | null | any = null;
+   let currentBlock = null;
 
    for (let i = 0; i < lines.length; i++) {
        const line = lines[i].trim();
         
-       const matchingCategory = arrCat.find((cat: string) => line.startsWith(cat));
+       const matchingCategory = arrCat.find((cat) => line.startsWith(cat));
         
        if (matchingCategory) {
            if (currentBlock && currentBlock.url && currentBlock.des) {
