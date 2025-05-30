@@ -37,7 +37,7 @@ export const stringToJson = async(textString) =>{
    const data = await res.json()
    const arrCat = Object.values(data.data_cats).map(value => String(value))
 
-   const lines = str.trim().split('\n').filter(line => line.trim() !== '');
+   const lines = textString.trim().split('\n').filter(line => line.trim() !== '');
    const jsonArray = [];
    let currentBlock: DataBlockItem | null | any = null;
 
