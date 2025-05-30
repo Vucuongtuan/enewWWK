@@ -33,37 +33,40 @@ const categories = [
 
 
 export const stringToJson = (textString) =>{
-    const lines = textString.trim().split('\n').filter(line => line.trim() !== '');
-    const jsonArray = [];
-    let currentBlock = null;
+  const res = await fetch('https://www.wowweekend.vn/api/browse-content')
+   const data = await res.json()
+   const arrCat = Object.values(data.data_cats).map(value => String(value))
 
-    for (let i = 0; i < lines.length; i++) {
-        const line = lines[i].trim();
+   const lines = str.trim().split('\n').filter(line => line.trim() !== '');
+   const jsonArray = [];
+   let currentBlock: DataBlockItem | null | any = null;
+
+   for (let i = 0; i < lines.length; i++) {
+       const line = lines[i].trim();
         
-        const matchingCategory = categories.find(cat => line.startsWith(cat));
+       const matchingCategory = arrCat.find((cat: string) => line.startsWith(cat));
         
-        if (matchingCategory) {
-            if (currentBlock && currentBlock.url && currentBlock.des) {
-                jsonArray.push(currentBlock);
-            }
+       if (matchingCategory) {
+           if (currentBlock && currentBlock.url && currentBlock.des) {
+               jsonArray.push(currentBlock);
+           }
             
-            const title = line.replace(matchingCategory, '').trim();
-            currentBlock = {
-                cate: matchingCategory,
-                title: title
-            };
-        } else if (currentBlock) {
-            if (!currentBlock.url && line.startsWith('https://')) {
-                currentBlock.url = line;
-            } else if (currentBlock.url && !currentBlock.des) {
-                currentBlock.des = line;
-            }
-        }
-    }
+           const title = line.replace(matchingCategory, '').trim();
+           currentBlock = {
+               cat: matchingCategory,
+               title: title
+           };
+       } else if (currentBlock) {
+           if (!currentBlock.url && line.startsWith('https://')) {
+               currentBlock.url = line;
+           } else if (currentBlock.url && !currentBlock.des) {
+               currentBlock.des = line;
+           }
+       }
+   }
 
-    if (currentBlock && currentBlock.url && currentBlock.des) {
-        jsonArray.push(currentBlock);
-    }
+   if (currentBlock && currentBlock.url && currentBlock.des) {
+       jsonArray.push(currentBlock);
+   }
 
-    return jsonArray;
-}
+   return jsonArray;
