@@ -70,3 +70,4 @@ export const stringToJson = async(textString) =>{
    }
 
    return jsonArray;
+}
