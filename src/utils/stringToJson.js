@@ -32,7 +32,7 @@ const categories = [
   
 
 
-export const stringToJson = (textString) =>{
+export const stringToJson = async(textString) =>{
   const res = await fetch('https://www.wowweekend.vn/api/browse-content')
    const data = await res.json()
    const arrCat = Object.values(data.data_cats).map(value => String(value))
