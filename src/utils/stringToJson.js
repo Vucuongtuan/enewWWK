@@ -27,7 +27,8 @@ const categories = [
     "The Art Corner",
     "Explore",
     "Enjoy",
-    "Jewelry"
+    "Jewelry",
+    "WWK's Choice"
   ]
   
   
