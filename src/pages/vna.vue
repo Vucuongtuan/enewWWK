@@ -1,8 +1,7 @@
 <template>
-
-<SelectTemplate/>
+    <SelectTemplate />
 </template>
 
 <script setup>
-import SelectTemplate from '../components/vna/SelectTemplate.vue'
+import SelectTemplate from "../components/vna/SelectTemplate.vue";
 </script>
