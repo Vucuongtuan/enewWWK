@@ -13,6 +13,7 @@ const downloadZip = (blob, filename) => {
 }
 
 export const handleFileUpload = async (file, folderName, templateHTML) => {
+    console.log({folderName})
     if (!file) {
         throw new Error('Invalid file input');
     }

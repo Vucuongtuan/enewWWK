@@ -11,7 +11,8 @@
                 Export
             </button>
         </div>
-        <Preview />
+        
+        <Preview v-if="view" />
     </div>
 </template>
 
@@ -28,6 +29,7 @@ const store = useDataStore();
 const { view, file, data, nameFol } = storeToRefs(store);
 
 const handelEp = async () => {
+    console.log({nameFol: nameFol.value})
     const temp = await templateFunc(nameFol.value, data);
     await handleFileUpload(file.value, nameFol.value, temp);
 };

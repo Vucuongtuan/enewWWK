@@ -58,12 +58,12 @@
                 v-model="text.input"
             ></textarea>
         </div>
-        <!-- <button @click="changeV">View {{ dataStore.view }}</button> -->
+        <button @click="changeV">View {{ dataStore.view }}</button> 
     </div>
 </template>
 
 <script setup>
-import { computed, reactive, ref } from "vue";
+import { computed, reactive, ref,watch } from "vue";
 import { stringToJson } from "../utils/stringToJson";
 import { useDataStore } from "@/stores/DataStore";
 import { storeToRefs } from "pinia";
@@ -88,7 +88,11 @@ const changeEnew = async () => {
 
     dataStore.addData(result);
 };
-
+// watch(text, () => {
+//     dataStore.changeNameFol(text.nameFol);
+//     dataStore.changeView();
+//     changeEnew();
+// });
 const changeV = () => {
     dataStore.changeNameFol(text.nameFol);
     dataStore.changeView();
