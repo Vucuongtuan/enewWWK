@@ -28,7 +28,8 @@ const categories = [
     "Explore",
     "Enjoy",
     "Jewelry",
-    "WWK's Choice"
+    "WWK's Choice",
+    "The Luxe Journal"
   ]
   
   
